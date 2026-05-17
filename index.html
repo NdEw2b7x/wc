@@ -27,6 +27,26 @@
         flex-direction: column;
         gap: 0.5rem;
       }
+      div[data-container='card'] {
+        border: 0.1rem solid var(--theme);
+        border-radius: 0.5rem;
+        background-color: #eee;
+
+        overflow: hidden;
+        > div {
+          border-bottom: 0.1rem solid var(--theme);
+          padding: 0.5rem;
+        }
+        div:last-child {
+          border: none;
+        }
+      }
+      .card-title {
+        background-color: var(--theme);
+        color: white;
+        text-align: center;
+        font-weight: bolder;
+      }
       .card-top {
         display: flex;
         justify-content: space-between;
@@ -41,36 +61,28 @@
             font-size: 0.8rem;
           }
         }
-        .url {
-          display: flex;
-          gap: 0.5rem;
-          flex-direction: row-reverse;
-          a {
-            text-decoration: none;
-            display: inline-block;
-
-            border-radius: 0.2rem;
-            padding: 0.5rem;
-            background-color: var(--theme);
-
-            color: white;
-            font-size: 0.8rem;
-          }
-        }
       }
       .card-bottom {
         display: flex;
         flex-direction: column;
         gap: 0.2rem;
       }
-      div[data-container='card'] {
-        border: 0.1rem solid var(--theme);
-        border-radius: 0.5rem;
-        padding: 0.5rem;
-        background-color: #eee;
+      .card-url {
         display: flex;
-        flex-direction: column;
         gap: 0.5rem;
+        a {
+          flex: 1;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+
+          border-radius: 0.2rem;
+          padding: 0.5rem;
+          background-color: var(--theme);
+
+          color: white;
+          font-size: 0.8rem;
+        }
       }
       div[data-container='img'] {
         max-width: 4rem;
@@ -87,9 +99,6 @@
       }
       .card-bottom span:last-child {
         margin-bottom: 0;
-      }
-      hr {
-        border-color: var(--theme);
       }
     </style>
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet" />
@@ -235,7 +244,7 @@
         },
         {
           id: 500046,
-          name: '카드의정석 EVERYDAY CHECK<br>기본교통카드',
+          name: '카드의정석 EVERYDAY CHECK 기본교통카드',
           img: [
             'https://m.wooricard.com/webcontent/cdPrdImgFileList/2026/3/9/ec9f94ff-9743-4ee7-b944-1ce47153e2e9.png',
           ],
@@ -479,21 +488,6 @@
           contents: ['SK인텔릭스 구독 자동납부 청구할인', '※ 전월실적 30만원 이상시 제공'],
         },
         {
-          id: 102997,
-          name: '카드의정석2',
-          img: [
-            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/10/30/0bfd3710-dd53-435d-a64f-e0816b556e82.png',
-          ],
-          fee: 22000,
-          release: '2025-04-25',
-          contents: [
-            '국내외 가맹점 1.2% 청구할인',
-            '전월 국내외 가맹점 이용실적 50만원 이상 시',
-            '분기별 이용실적에 따라 최대 15,000원 청구할인',
-            '분기별 국내외 가맹점 이용실적 300/600/900만원 이상 시',
-          ],
-        },
-        {
           id: 103490,
           name: '위비트래블 J 체크카드',
           img: [
@@ -650,6 +644,48 @@
           ],
         },
         {
+          id: 103729,
+          name: '카드의정석 EVERY DISCOUNT',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/7/10/4a63fb34-cbee-4b2a-90d2-32652e5e5ddb.png',
+          ],
+          fee: 12000,
+          release: '2024-07-08',
+          contents: [
+            '국내외 가맹점 0.8% 청구할인',
+            '전월실적, 할인한도 없음',
+            '국내 온라인 간편결제 2% 추가 청구할인',
+            '우리WON페이, 네이버페이, 카카오페이',
+          ],
+        },
+        {
+          id: 103483,
+          name: '갤러리아 Platinum 우리카드',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/7/1/8c7b8c97-da72-4fff-a8c2-f31910e6c793.png',
+          ],
+          fee: 30000,
+          release: '2025-07-17',
+          contents: [
+            '갤러리아 백화점 5~7% 청구할인',
+            '※ 전월실적 50만원 이상 시 제공',
+            '갤러리아 백화점 최대 6개월 무이자할부',
+            '※ 전월실적 50만원 이상 시 제공',
+            '교통, 배달앱, OTT 3% 청구할인',
+            '※ 전월실적 50만원 이상 시 제공',
+          ],
+        },
+        {
+          id: 103564,
+          name: 'E1 우리카드',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/6/30/fcb5c339-e64a-4380-a2be-40c7fa769808.png',
+          ],
+          fee: 20000,
+          release: '2025-07-18',
+          contents: ['E1 우리카드 청구할인 서비스'],
+        },
+        {
           id: 103755,
           name: '우리카드 7CORE',
           img: [
@@ -666,6 +702,183 @@
             '교육, 병원, 주유 10% 청구할인',
             '학원/병원 업종, 교보문고/영풍문고, 4대 주유소※ 전월 이용실적 50만원 이상 시 제공',
           ],
+        },
+        {
+          id: 102997,
+          name: '카드의정석2',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/5/8/dd54fd62-c287-4bd2-a50a-f6705e7d7398.png',
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/5/19/5e625731-394b-4187-8a86-04fe0e5b7f39.png',
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/10/30/0bfd3710-dd53-435d-a64f-e0816b556e82.png',
+          ],
+          fee: 22000,
+          release: '2025-04-25',
+          contents: [
+            '국내외 가맹점 1.2% 청구할인',
+            '전월 국내외 가맹점 이용실적 50만원 이상 시',
+            '분기별 이용실적에 따라 최대 15,000원 청구할인',
+            '분기별 국내외 가맹점 이용실적 300/600/900만원 이상 시',
+          ],
+        },
+        {
+          id: 104022,
+          name: '우리 기후동행카드(신용)',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/1/23/92cfb383-11d1-41ce-ba6e-4b37226e4493.png',
+          ],
+          fee: 0,
+          release: '2025-02-12',
+          contents: ['할인 혜택', '전월 국내외 가맹점 이용실적 20만원 이상 시'],
+        },
+        {
+          id: 104023,
+          name: '우리 기후동행카드(체크)',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2025/1/23/3b07701d-05d5-4190-86dd-94d87e3aab1c.png',
+          ],
+          fee: 0,
+          release: '2025-02-12',
+          contents: ['생활 5% 캐시백 서비스', '전월 국내외 가맹점 이용실적 25만원 이상 시'],
+        },
+        {
+          id: 103759,
+          name: 'CJ ONE 우리체크',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/12/18/d534bbc3-fb71-49e2-a75c-844bcc0c4068.png',
+          ],
+          fee: 0,
+          release: '2025-03-20',
+          contents: ['CJ ONE 포인트 적립', '올리브영, CGV, 뚜레쥬르, 빕스, CJ온스타일'],
+        },
+        {
+          id: 102864,
+          name: 'K-패스 우리카드',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/12/17/b83f392f-4739-4bb8-bdd8-35a3ba36cc7e.png',
+          ],
+          fee: 15000,
+          release: '2024-12-30',
+          contents: [
+            '국내 가맹점 0.3% 청구할인',
+            '전월 국내가맹점 40만원 이상',
+            '카페/편의점 10% 청구할인',
+            '전월 국내가맹점 40만원 이상',
+            '버스/지하철 10% 청구할인',
+            '전월 국내가맹점 40만원 이상',
+          ],
+        },
+        {
+          id: 102865,
+          name: 'K-패스 우리카드(체크)',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/12/17/01690ccd-4fa9-4e07-b1b9-203a1822d771.png',
+          ],
+          fee: 0,
+          release: '2024-12-30',
+          contents: [
+            '생활 혜택',
+            '스타벅스/폴바셋/CU/GS25 10% 캐시백',
+            '대중교통 혜택',
+            '버스/지하철 10% 캐시백',
+          ],
+        },
+        {
+          id: 103757,
+          name: 'SK LPG 화물복지카드',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/12/17/68604e02-dcef-483a-967d-b32c051037d3.png',
+          ],
+          fee: 0,
+          release: '2025-02-21',
+          contents: ['SK 충전소 LPG 충전할인'],
+        },
+        {
+          id: 103747,
+          name: 'EVERY WON POINT',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/11/13/0e016cd7-7dc5-439c-8184-96aee0cf10ec.png',
+          ],
+          fee: 12000,
+          release: '2024-11-28',
+          contents: [
+            '국내외 가맹점 0.8% 적립',
+            '전월실적, 적립한도 없음',
+            '국내 온라인 간편결제 2% 추가적립',
+            '우리WON페이, 네이버페이, 카카오페이',
+          ],
+        },
+        {
+          id: 102722,
+          name: '트래블월렛 우리카드',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/11/6/50eabcba-2d40-4c72-b3e2-2ad611e84e9c.png',
+          ],
+          fee: 20000,
+          release: '2023-07-07',
+          contents: [
+            '트래블 포인트 최대 2.0% 적립',
+            '적립한도 없이 국내 1.0%, 해외 2.0% 적립',
+            '해외 이용 수수료 1.4% 면제',
+            '해외서비스 수수료, 국제브랜드 수수료 면제',
+          ],
+        },
+        {
+          id: 103117,
+          name: 'KREAM 체크카드',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/11/6/c7c17b8a-3f88-4bc4-b14b-3e622edbadc7.png',
+          ],
+          fee: 0,
+          release: '2023-12-26',
+          contents: [
+            'KREAM 이용금액 5% 청구할인',
+            '전월 국내외 가맹점 이용실적 20만원 이상 시 혜택 제공',
+            '국내외 가맹점 이용금액 0.2% 청구할인',
+            '전월 실적 조건 없음',
+          ],
+        },
+        {
+          id: 103748,
+          name: '모임WON CHECK',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/10/25/3db0db8c-382d-40f2-bd85-1582281770a0.png',
+          ],
+          fee: 0,
+          release: '2024-12-19',
+          contents: [
+            '모임 5% 캐시백',
+            '음식점·주점/카페/편의점(저녁 6~11시 결제 건)',
+            '갓생 5% 캐시백',
+            '헬스/뷰티/전자책',
+            '교통 5% 캐시백',
+            '택시/카셰어링',
+          ],
+        },
+        {
+          id: 103686,
+          name: '카드의정석 TEN',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/9/30/142a2b05-fcaf-465b-806a-30c5a33e1fa6.png',
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/9/30/df154cbe-b77e-4823-a385-f59820afb1ac.png',
+          ],
+          fee: 12000,
+          release: '2024-05-30',
+          contents: [
+            '커피, 편의점, 교통, 이동통신, 해외 10% 청구할인',
+            '',
+            '음식점/주점 및 온라인 간편결제 1% 청구할인',
+            '',
+          ],
+        },
+        {
+          id: 103737,
+          name: '교원웰스 우리카드 Ⅱ',
+          img: [
+            'https://m.wooricard.com/webcontent/cdPrdImgFileList/2024/9/10/d20d2681-f040-4b7f-b050-7e4a7a6ccdd4.png',
+          ],
+          fee: 20000,
+          release: '2024-09-30',
+          contents: ['웰스 렌탈요금/교원라이프 상조회비 청구할인'],
         },
         {
           id: 102719,
@@ -695,8 +908,22 @@
         contents.forEach(e => {
           contentsnode += `<span>${e}</span>`
         })
-        document.querySelector('#root').innerHTML +=
-          `<div data-container="card" data-prdid="${id}"><div class="card-top"><div data-container="img">${imgnode}</div><div class="summary"><div class="title"><h3>${name}</h3><div>연회비: ${fee}원<br>출시: ${release}</div></div><div class="url"><a href="https://m.wooricard.com/dcmw/yh1/crd/crd01/M1CRD101S02.do?recomNo=${id}" target="_blank">모바일웹</a><a href="https://m.wooricard.com/dcmw/yh1/mlk/mlk05/M1MLK205S02.do?cdPrdCd=${id}" target="_blank">상품안내장</a></div></div></div><hr><div class="card-bottom">${contentsnode}</div></div>`
+        document.querySelector('#root').innerHTML += `<div data-container="card" data-prdid="${id}">
+                <div class="card-title">${name}</div>
+                <div class="card-top">
+                  <div data-container="img">${imgnode}</div>
+                  <div class="summary">
+                    <div class="title">
+                      <div>연회비: ${fee}원<br>출시: ${release}</div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="card-bottom">${contentsnode}</div>
+                  <div class="card-url">
+                    <a href="https://m.wooricard.com/dcmw/yh1/crd/crd01/M1CRD101S02.do?recomNo=${id}" target="_blank">모바일웹</a>
+                    <a href="https://m.wooricard.com/dcmw/yh1/mlk/mlk05/M1MLK205S02.do?cdPrdCd=${id}" target="_blank">상품안내장</a>
+                  </div>
+                </div>`
       })
     </script>
   </body>
